@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Tab Organiser</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ── Header ─────────────────────────────────────── -->
+    <header class="top-shell">
+      <div class="hero">
+        <div class="hero-copy">
+          <h1>Naadir's</h1>
+          <p class="hero-title">AI Tab Organiser</p>
+          <p class="hero-sub">Group your chaos with AI</p>
+        </div>
+        <img class="hero-logo" src="icon/ai_tab_organizer_logo.png" alt="AI Tab Organiser logo">
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="control-row">
+          <label class="control-label">AI Platform</label>
+          <div class="platform-toggle">
+            <button class="platform-btn" data-platform="claude">Claude</button>
+            <button class="platform-btn active" data-platform="gemini">Gemini</button>
+          </div>
+        </div>
+        <div class="control-row">
+          <label class="toggle-label">
+            <input type="checkbox" id="excludePinned" checked>
+            <span>Skip pinned tabs</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Tab count + action button -->
+      <div class="tab-summary">
+        <span id="tabCount" class="tab-count-badge">— tabs ready</span>
+      </div>
+      <button id="organiseBtn" class="organise-btn">
+        <span class="organise-btn__icon">✦</span>
+        Organise My Tabs
+      </button>
+    </header>
+
+    <!-- ── Main ────────────────────────────────────────── -->
+    <main class="middle-scroll">
+
+      <!-- Idle state -->
+      <div id="idleState" class="empty-state">
+        <div class="empty-icon">🗂</div>
+        <p class="empty-title">Ready to organise</p>
+        <p class="empty-hint">Click <strong>Organise My Tabs</strong> and AI will analyse every open tab and sort them into logical groups.</p>
+      </div>
+
+      <!-- Progress state -->
+      <div id="progressState" class="progress-state" style="display:none">
+        <div class="progress-spinner"></div>
+        <p id="progressLabel" class="progress-label">Opening AI…</p>
+        <p class="progress-hint">A minimised window will open briefly, then close automatically.</p>
+        <div class="progress-bar-wrap">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Results state -->
+      <div id="resultsState" style="display:none">
+        <div class="results-header">
+          <p class="results-title">Proposed Groups</p>
+          <p class="results-hint">Review below then apply — this will move your tabs into Chrome tab groups.</p>
+        </div>
+        <ul id="groupList" class="group-list"></ul>
+      </div>
+
+      <!-- Error state -->
+      <div id="errorState" class="error-state" style="display:none">
+        <div class="empty-icon">⚠️</div>
+        <p id="errorMsg" class="error-msg">Something went wrong.</p>
+        <button id="retryBtn" class="retry-btn">Try Again</button>
+      </div>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────── -->
+    <footer class="bottom-bar">
+      <button id="applyBtn" class="apply-btn" style="display:none">
+        ✓ Apply Groups
+      </button>
+      <button id="clearBtn" class="clear-btn" style="display:none">
+        ✕ Ungroup All
+      </button>
+      <p class="disclaimer">
+        Tab titles and URLs are sent only to your chosen AI. No data leaves your browser otherwise.
+      </p>
+    </footer>
+
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

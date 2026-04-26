@@ -1,0 +1,11 @@
+{
+  "section": "browserextensions",
+  "category": "google-chrome",
+  "n": 3,
+  "title": "AI Tab Organiser",
+  "img": "ai-tab-organiser.png",
+  "desc": "Chrome extension that instantly groups all your open tabs into colour-coded categories using Claude or Gemini.",
+  "code": "https://github.com/Naadir-Dev-Portfolio/AI-Tab-Organiser/blob/main/sidepanel.js",
+  "details": "https://github.com/Naadir-Dev-Portfolio/AI-Tab-Organiser/blob/main/README.md",
+  "tags": ["Browser Extensions", "Chrome", "JavaScript", "HTML", "CSS"]
+}
