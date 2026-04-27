@@ -1,6 +1,6 @@
 {
   "section": "browserextensions",
-  "category": "google-chrome",
+  "category": "chromium",
   "n": 3,
   "title": "AI Tab Organiser",
   "img": "ai-tab-organiser.png",
